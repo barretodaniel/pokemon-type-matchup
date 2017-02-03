@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<section class="section">
+  <div class="columns">
+    <aside class="menu column is-2">
+      <p class="menu-label">Opponent Type</p>
+      <app-type-list (typeSelected)="onTypeSelected($event)"></app-type-list>
+    </aside>
+    <div class="column">
+      <app-matchup-list [types]="selected"></app-matchup-list>
+    </div>
+  </div>
+</section>
