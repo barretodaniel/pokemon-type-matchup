@@ -1,8 +1,8 @@
 interface Effect {
   normal: number[];
-  half: number[];
-  none: number[];
-  super: number[];
+  resistant: number[];
+  immune: number[];
+  weakness: number[];
 }
 
 export class Type {

@@ -14,6 +14,6 @@ export class AppComponent implements OnInit {
   }
 
   onTypeSelected(event) {
-    this.selected = event;
+    this.selected = [...event];
   }
 }
