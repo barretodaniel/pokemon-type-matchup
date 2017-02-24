@@ -26,25 +26,18 @@ export class TypeListComponent implements OnInit {
   }
 
   onTypeSelect(type: Type) {
-    // const typeIndex = this.selected.indexOf(type);
+    const typeIndex = this.selected.indexOf(type);
 
-    // if (typeIndex > -1) {
-    //   type.active = false;
-    //   this.selected.splice(typeIndex, 1);
-    // } else if (this.selected.length < 2) {
-    //   type.active = true;
-    //   this.selected.push(type);
-    // } else {
-    //   this.selected[1].active = false;
-    //   type.active = true;
-    //   this.selected.splice(1, 1, type);
-    // }
-    type.active = true;
-    if (this.selected.length) {
-      this.selected[0].active = false;
-      this.selected[0] = type;
-    } else {
+    if (typeIndex > -1) {
+      type.active = false;
+      this.selected.splice(typeIndex, 1);
+    } else if (this.selected.length < 2) {
+      type.active = true;
       this.selected.push(type);
+    } else {
+      this.selected[1].active = false;
+      type.active = true;
+      this.selected.splice(1, 1, type);
     }
 
     this.typeSelected.emit(this.selected);

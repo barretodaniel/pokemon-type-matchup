@@ -19,46 +19,64 @@ export class MatchupListComponent implements OnInit, OnChanges {
   constructor(private TypeDataService: TypeDataService) { }
 
   ngOnInit() {
-    this.weaknesses = [];
-    this.immunities = [];
-    this.resistances = [];
-    this.neutrals = [];
+    this.reset();
     this.typeMap = new Map();
     this.makeTypeMap();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-    this.setTypes(this.types.length);
+    this.reset();
+    if (this.types.length) {
+      this.setTypes();
+    }
   }
 
   private makeTypeMap() {
     this.TypeDataService.getTypes().subscribe(types => {
-      types.forEach(type => {
-        this.typeMap.set(type.id, type);
-      });
+      types.forEach(type => this.typeMap.set(type.id, type));
     });
   }
 
-  private setTypes(numTypes: number) {
-    switch (numTypes) {
-      case 0:
-        this.weaknesses = [];
-        this.immunities = [];
-        this.resistances = [];
-        this.neutrals = [];
-        break;
-      case 1:
-        this.weaknesses = this.types[0].effect.weakness.map(id => this.typeMap.get(id));
-        this.immunities = this.types[0].effect.immune.map(id => this.typeMap.get(id));
-        this.resistances = this.types[0].effect.resistant.map(id => this.typeMap.get(id));
-        this.neutrals = this.types[0].effect.normal.map(id => this.typeMap.get(id));
-        break;
-      case 2:
-        break;
-      default:
-        break;
-    }
+  private reset() {
+    this.weaknesses = [];
+    this.immunities = [];
+    this.resistances = [];
+    this.neutrals = [];
+  }
+
+  private setTypes() {
+    this.typeMap.forEach(type => {
+      const combinedMultiplier = this.types.map(selected => {
+        let multiplier = 1;
+
+        if (selected.effect.weakness.indexOf(type.id) >= 0) {
+          multiplier = 2;
+        }
+
+        if (selected.effect.resistant.indexOf(type.id) >= 0) {
+          multiplier = 0.5;
+        }
+        if (selected.effect.immune.indexOf(type.id) >= 0) {
+          multiplier = 0;
+        }
+        if (selected.effect.normal.indexOf(type.id) >= 0) {
+          multiplier = 1;
+        }
+
+        return multiplier;
+      }).reduce((previous, current) => previous * current, 1);
+
+      if (combinedMultiplier >= 2) {
+        this.weaknesses.push(type);
+      } else if (combinedMultiplier === 1) {
+        this.neutrals.push(type);
+      } else if (combinedMultiplier < 1 && combinedMultiplier > 0) {
+        this.resistances.push(type);
+      } else if (combinedMultiplier === 0) {
+        this.immunities.push(type);
+      }
+
+    });
   }
 
 }

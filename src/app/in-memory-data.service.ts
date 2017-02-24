@@ -29,7 +29,7 @@ export class InMemoryDataService implements InMemoryDbService {
         active: false,
         effect: {
           normal: [
-            MoveType.NORMAL, MoveType.ELECTRIC, MoveType.FIGHTING, MoveType.POISON, MoveType.GROUND, MoveType.FLYING, MoveType.PSYCHIC,
+            MoveType.NORMAL, MoveType.ELECTRIC, MoveType.FIGHTING, MoveType.POISON, MoveType.FLYING, MoveType.PSYCHIC,
             MoveType.GHOST, MoveType.DARK, MoveType.DRAGON
           ],
           resistant: [MoveType.FIRE, MoveType.GRASS, MoveType.ICE, MoveType.BUG, MoveType.STEEL, MoveType.FAIRY],
@@ -44,7 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
         active: false,
         effect: {
           normal: [
-            MoveType.NORMAL, MoveType.ICE, MoveType.FIGHTING, MoveType.POISON, MoveType.FLYING, MoveType.PSYCHIC,
+            MoveType.NORMAL, MoveType.FIGHTING, MoveType.POISON, MoveType.FLYING, MoveType.PSYCHIC,
             MoveType.BUG, MoveType.GHOST, MoveType.DARK, MoveType.FAIRY, MoveType.GROUND, MoveType.ROCK, MoveType.DRAGON
           ],
           resistant: [MoveType.FIRE, MoveType.WATER, MoveType.ICE, MoveType.STEEL],
@@ -122,7 +122,7 @@ export class InMemoryDataService implements InMemoryDbService {
             MoveType.NORMAL, MoveType.FIRE, MoveType.WATER, MoveType.ELECTRIC, MoveType.ICE, MoveType.FLYING, MoveType.ROCK, MoveType.GHOST,
             MoveType.DRAGON, MoveType.DARK, MoveType.STEEL
           ],
-          resistant: [MoveType.GRASS, MoveType.FIGHTING, MoveType.POISON, MoveType.BUG, MoveType.FAIRY,],
+          resistant: [MoveType.GRASS, MoveType.FIGHTING, MoveType.POISON, MoveType.BUG, MoveType.FAIRY],
           immune: [],
           weakness: [MoveType.GROUND, MoveType.PSYCHIC]
         }
