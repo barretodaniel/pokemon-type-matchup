@@ -2,6 +2,17 @@
 @import '../node_modules/bulma/css/bulma.css';
 @import '../node_modules/spinkit/css/spinners/2-double-bounce.css';
 
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body > .section {
+  flex: 1 1 100%;
+}
+
 .sk-double-bounce {
   position: absolute;
   margin: 0;

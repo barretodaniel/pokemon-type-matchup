@@ -1,4 +1,4 @@
-<div class="columns is-multiline">
+<div class="columns is-multiline is-mobile">
   <div class="column is-narrow" *ngFor="let type of types | async">
     <button class="button type-list__button" [ngClass]="{ 'is-active': type.active }" type="button" [style.color]="type.color"
       (click)="onTypeSelect(type)">{{type.name}}</button>
