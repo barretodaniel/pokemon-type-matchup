@@ -1,6 +1,6 @@
-<ul class="menu-list">
-  <li class="type-list__item" *ngFor="let type of types | async">
+<div class="columns is-multiline">
+  <div class="column is-narrow" *ngFor="let type of types | async">
     <button class="button type-list__button" [ngClass]="{ 'is-active': type.active }" type="button" [style.color]="type.color"
       (click)="onTypeSelect(type)">{{type.name}}</button>
-  </li>
-</ul>
+  </div>
+</div>

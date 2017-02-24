@@ -1,40 +1,12 @@
 <div class="box">
-  <h3 class="title">
-    Weaknesses
-  </h3>
-  <div class="columns is-multiline">
-    <div class="column is-narrow" *ngFor="let type of weaknesses">
-      <span class="tag is-medium" [style.backgroundColor]="type.color">{{type.name}}</span>
-    </div>
-  </div>
+  <app-effectiveness [title]="'Weaknesses'" [types]="weaknesses"></app-effectiveness>
 </div>
 <div class="box">
-  <h3 class="title">
-    Immunities
-  </h3>
-  <div class="columns is-multiline">
-    <div class="column is-narrow" *ngFor="let type of immunities">
-      <span class="tag is-medium" [style.backgroundColor]="type.color">{{type.name}}</span>
-    </div>
-  </div>
+  <app-effectiveness [title]="'Immunities'" [types]="immunities"></app-effectiveness>
 </div>
 <div class="box">
-  <h3 class="title">
-    Resistances
-  </h3>
-  <div class="columns is-multiline">
-    <div class="column is-narrow" *ngFor="let type of resistances">
-      <span class="tag is-medium" [style.backgroundColor]="type.color">{{type.name}}</span>
-    </div>
-  </div>
+  <app-effectiveness [title]="'Resistances'" [types]="resistances"></app-effectiveness>
 </div>
 <div class="box">
-  <h3 class="title">
-    Neutral
-  </h3>
-  <div class="columns is-multiline">
-    <div class="column is-narrow" *ngFor="let type of neutrals">
-      <span class="tag is-medium" [style.backgroundColor]="type.color">{{type.name}}</span>
-    </div>
-  </div>
+  <app-effectiveness [title]="'Neutral'" [types]="neutrals"></app-effectiveness>
 </div>

@@ -10,12 +10,14 @@ import { TypeDataService } from './shared/type-data.service';
 import { AppComponent } from './app.component';
 import { TypeListComponent } from './type-list/type-list.component';
 import { MatchupListComponent } from './matchup-list/matchup-list.component';
+import { EffectivenessComponent } from './matchup-list/effectiveness/effectiveness.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TypeListComponent,
-    MatchupListComponent
+    MatchupListComponent,
+    EffectivenessComponent
   ],
   imports: [
     BrowserModule,
