@@ -3,7 +3,6 @@
 @import '../node_modules/spinkit/css/spinners/2-double-bounce.css';
 
 html, body {
-  height: 100%;
   width: 100%;
 }
 
@@ -11,8 +10,12 @@ html, body {
   padding-bottom: 0;
 }
 
+.grow {
+  width: 100%;
+}
+
 .sk-double-bounce {
-  position: absolute;
+  position: relative;
   margin: 0;
   top: 50%;
   left: 50%;
