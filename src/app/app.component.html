@@ -1,15 +1,13 @@
-<section class="section">
-  <div class="container is-fluid">
-    <div class="columns">
-      <aside class="column">
-        <p class="menu-label">Opponent Type</p>
-        <app-type-list (typeSelected)="onTypeSelected($event)"></app-type-list>
-      </aside>
-    </div>
-    <div class="columns">
-      <div class="column">
-        <app-matchup-list [types]="selected"></app-matchup-list>
-      </div>
+<div class="container is-fluid">
+  <div class="columns">
+    <aside class="column">
+      <p class="menu-label">Opponent Type</p>
+      <app-type-list (typeSelected)="onTypeSelected($event)"></app-type-list>
+    </aside>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <app-matchup-list [types]="selected"></app-matchup-list>
     </div>
   </div>
-</section>
+</div>
