@@ -6,4 +6,4 @@ Although the newest iteration of the series provides this information, it only d
 I'm hoping to integrate a lookup service in the future; however, there does not seem to be services that have gen 7 data.
 
 ## Motivation
-The tool was created as way to practice using the [Angular](https://angular.io/) development framework. 
+The tool was created mainly as way to practice using the [Angular](https://angular.io/) development framework. 
